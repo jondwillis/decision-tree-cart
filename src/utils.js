@@ -107,7 +107,7 @@ export function regressionError(array, splitted) {
 
   for (var i = 0; i < splits.length; ++i) {
     var currentSplit = splitted[splits[i]];
-    error += squaredError(currentSplit);
+    error += currentSplit instanceof Array ? squaredError(currentSplit) : 0;
   }
   return error;
 }
